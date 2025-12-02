@@ -10,6 +10,7 @@ module com.example.showersense {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires java.dotenv;
 
     opens com.example.showersense to javafx.fxml;
     exports com.example.showersense;

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_LEFT" maxWidth="500.0" prefHeight="400.0" spacing="25.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.showersense.SensorDetailController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Button onAction="#handleBack" style="-fx-background-color: #bdc3c7; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 5;" text="&lt; Terug" />
+                <Label text="Sensor Details">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="32.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <VBox spacing="8.0">
+            <children>
+                <Label text="Locatie" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" />
+                <TextField fx:id="locatieField" style="-fx-font-size: 16px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8;" />
+            </children>
+        </VBox>
+        <VBox spacing="8.0">
+            <children>
+                <Label text="Status" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;" />
+                <TextField fx:id="statusField" editable="false" style="-fx-font-size: 16px; -fx-background-color: #ecf0f1; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 8;" />
+            </children>
+        </VBox>
+        <Label fx:id="messageLabel" visible="false" style="-fx-font-size: 14px;" />
+        <HBox spacing="10.0">
+            <children>
+                <Button onAction="#handleUpdate" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 5; -fx-cursor: hand;" text="Update Sensor" />
+                <Button onAction="#handleDelete" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 5; -fx-cursor: hand;" text="Verwijder Sensor" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

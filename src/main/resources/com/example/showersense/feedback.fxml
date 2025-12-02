@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jouwapp.FeedbackController">
+
+    <children>
+        <VBox maxWidth="500.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="Feedback" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="28.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Wat vind je van de app?" textFill="#7f8c8d">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER_RIGHT">
+                            <children>
+                                <Label text="Huidige Score" textFill="#7f8c8d">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="5.0">
+                                    <children>
+                                        <Label text="4.7" textFill="#f1c40f">
+                                            <font>
+                                                <Font name="System Bold" size="36.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="/ 5" textFill="#bdc3c7">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets top="10.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <Label text="Op basis van 250 reviews" textFill="#95a5a6">
+                                    <font>
+                                        <Font size="10.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <ProgressBar prefWidth="500.0" progress="0.94" style="-fx-accent: #f1c40f;" />
+
+                <VBox spacing="10.0">
+                    <children>
+                        <Label text="Kies je ervaring:" textFill="#34495e">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER" spacing="15.0">
+                            <children>
+                                <ToggleButton fx:id="btnAngry" mnemonicParsing="false" onAction="#handleEmojiClick" prefHeight="50.0" prefWidth="60.0" style="-fx-base: #ffadad; -fx-background-radius: 10; -fx-font-size: 20;" text="😠">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="emojiGroup" />
+                                    </toggleGroup>
+                                </ToggleButton>
+                                <ToggleButton fx:id="btnNeutral" mnemonicParsing="false" onAction="#handleEmojiClick" prefHeight="50.0" prefWidth="60.0" style="-fx-base: #ffd6a5; -fx-background-radius: 10; -fx-font-size: 20;" text="😐" toggleGroup="$emojiGroup" />
+                                <ToggleButton fx:id="btnHappy" mnemonicParsing="false" onAction="#handleEmojiClick" prefHeight="50.0" prefWidth="60.0" style="-fx-base: #fdffb6; -fx-background-radius: 10; -fx-font-size: 20;" text="🙂" toggleGroup="$emojiGroup" />
+                                <ToggleButton fx:id="btnVeryHappy" mnemonicParsing="false" onAction="#handleEmojiClick" prefHeight="50.0" prefWidth="60.0" style="-fx-base: #caffbf; -fx-background-radius: 10; -fx-font-size: 20;" text="😀" toggleGroup="$emojiGroup" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Opmerkingen (optioneel):" textFill="#34495e">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextArea fx:id="commentArea" prefHeight="100.0" promptText="Vertel ons wat we beter kunnen doen..." style="-fx-background-color: transparent; -fx-border-color: #bdc3c7; -fx-border-radius: 5;" wrapText="true" />
+                    </children>
+                </VBox>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleCancel" prefWidth="100.0" style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d;" text="Annuleren" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSubmit" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-weight: bold;" text="Versturen" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </children>
+</VBox>

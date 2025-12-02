@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.showersense.WaterVerbruikController">
+    <center>
+        <VBox fx:id="dashboardContent" alignment="TOP_CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <Label text="💧 Real-time Waterverbruik" textFill="#2c3e50">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="28.0" />
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button onAction="#handleRefresh" mnemonicParsing="false" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;" text="Verversen">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label text="Actueel verbruik" textFill="#7f8c8d">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+                                    <children>
+                                        <Label fx:id="lblActueel" text="12.7" textFill="#2980b9">
+                                            <font>
+                                                <Font name="System Bold" size="48.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="L/min" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="10.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label text="Dagverbruik" textFill="#7f8c8d">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+                                    <children>
+                                        <Label fx:id="lblDag" text="275" textFill="#27ae60">
+                                            <font>
+                                                <Font name="System Bold" size="48.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Liter" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="10.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER" prefHeight="150.0" prefWidth="220.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label text="Maandverbruik" textFill="#7f8c8d">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+                                    <children>
+                                        <Label fx:id="lblMaand" text="8.1" textFill="#e67e22">
+                                            <font>
+                                                <Font name="System Bold" size="48.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="M³" textFill="#7f8c8d">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets bottom="10.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Verbruikshistorie" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="20.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <LineChart fx:id="historieChart" createSymbols="true" legendVisible="false">
+                                    <xAxis>
+                                        <CategoryAxis label="Data ID" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="yAxis" label="Water Verbruik" side="LEFT" />
+                                    </yAxis>
+                                </LineChart>
+                            </children>
+                        </VBox>
+
+                        <VBox prefWidth="250.0" spacing="10.0" style="-fx-background-color: #d4efff; -fx-background-radius: 15; -fx-border-color: #89CFF0; -fx-border-radius: 15; -fx-border-width: 2;">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </padding>
+                            <children>
+                                <Label text="💡 Besparingstip" textFill="#0277bd">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Beperk het verbruik tijdens piekuren (07:00 - 09:00)." textFill="#02588d" wrapText="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Door korter te douchen bespaar je al snel 40 liter per keer!" textFill="#02588d" wrapText="true">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="50.0" spacing="50.0" style="-fx-background-color: #34495e;" BorderPane.alignment="CENTER">
+            <children>
+                <Button onAction="#handleDashboard" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Dashboard">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button onAction="#handleAccount" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Account">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button onAction="#handleSensoren" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Sensoren">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button onAction="#handleFeedback" style="-fx-background-color: transparent; -fx-text-fill: white;" text="Feedback">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

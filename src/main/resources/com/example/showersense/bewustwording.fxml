@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F4F4F4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <GridPane hgap="20.0" vgap="20.0" VBox.vgrow="ALWAYS" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+
+            <children>
+
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <Label text="✅" textFill="#2ecc71">
+                            <font>
+                                <Font size="64.0" />
+                            </font>
+                        </Label>
+                        <Label text="Feedback verzonden" textFill="#333333">
+                            <font>
+                                <Font name="Segoe UI Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="Je bericht is succesvol ontvangen." textFill="#7f8c8d">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow offsetY="5.0" radius="15.0" width="30.0">
+                            <color>
+                                <Color opacity="0.10" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <Label text="❌" textFill="#e74c3c">
+                            <font>
+                                <Font size="64.0" />
+                            </font>
+                        </Label>
+                        <Label text="Verzenden mislukt" textFill="#333333">
+                            <font>
+                                <Font name="Segoe UI Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="Controleer je verbinding." textFill="#7f8c8d">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow offsetY="5.0" radius="15.0" width="30.0">
+                            <color>
+                                <Color opacity="0.10" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="ℹ" textFill="#3498db">
+                            <font>
+                                <Font size="64.0" />
+                            </font>
+                        </Label>
+                        <Label text="Nieuwe data beschikbaar" textFill="#333333">
+                            <font>
+                                <Font name="Segoe UI Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="Klik om te verversen." textFill="#7f8c8d">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow offsetY="5.0" radius="15.0" width="30.0">
+                            <color>
+                                <Color opacity="0.10" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+
+                <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 15;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Label text="⚠" textFill="#f39c12">
+                            <font>
+                                <Font size="64.0" />
+                            </font>
+                        </Label>
+                        <Label text="Hoog verbruik" textFill="#333333">
+                            <font>
+                                <Font name="Segoe UI Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label text="Let op je energiebeheer." textFill="#7f8c8d">
+                            <font>
+                                <Font name="Segoe UI" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow offsetY="5.0" radius="15.0" width="30.0">
+                            <color>
+                                <Color opacity="0.10" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+
+            </children>
+        </GridPane>
+    </children>
+</VBox>

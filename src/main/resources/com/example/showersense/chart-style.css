@@ -1,0 +1,19 @@
+.chart-series-line {
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #3498db;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #3498db, white;
+}
+
+/* This is the magic part that makes the line curved */
+.chart-series-line {
+    -fx-shape: "M0,0 L1,0"; /* This is a placeholder, the actual curve is done by the line chart itself */
+    -fx-stroke-type: centered;
+    -fx-stroke-dash-array: 1 1; /* This is a trick to make the line smooth */
+}

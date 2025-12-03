@@ -82,7 +82,6 @@ public class WaterVerbruikController {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle database errors (e.g., show an alert)
         }
     }
 
@@ -111,7 +110,6 @@ public class WaterVerbruikController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Node page = fxmlLoader.load();
 
-            // Pass the gebruikerID and mainPane to the controller if it needs it
             Object controller = fxmlLoader.getController();
             if (controller instanceof AccountController) {
                 ((AccountController) controller).setGebruikerID(this.gebruikerID);

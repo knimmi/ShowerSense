@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,15 +45,19 @@ public class LoginController {
     }
 
     @FXML
-    protected void handleShowRegister() {
+    protected void handleShowRegister(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage registerStage = new Stage();
-            registerStage.setTitle("Nieuwe Gebruiker");
-            registerStage.initModality(Modality.APPLICATION_MODAL);
-            registerStage.setScene(scene);
-            registerStage.showAndWait();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Bewaar de huidige venstergrootte
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
+            stage.setTitle("Nieuwe Gebruiker");
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,12 +90,18 @@ public class LoginController {
     private void switchToDashboard(ActionEvent event) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("real_time_verbruik.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Bewaar de huidige venstergrootte
+            double width = stage.getScene().getWidth();
+            double height = stage.getScene().getHeight();
+
+            // Laad de nieuwe scène met de opgeslagen grootte
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
 
             WaterVerbruikController controller = fxmlLoader.getController();
             controller.setGebruikerID(this.loggedInGebruikerID);
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Waterverbruik Monitor");
             stage.setScene(scene);
             stage.centerOnScreen();
